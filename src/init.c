@@ -40,7 +40,11 @@ as that of the covered work.  */
 #include <limits.h>
 /* not all systems provide PATH_MAX in limits.h */
 #ifndef PATH_MAX
+#ifndef _WIN32
 # include <sys/param.h>
+#else
+# include <pathmax.h>
+#endif
 # ifndef PATH_MAX
 #  define PATH_MAX MAXPATHLEN
 # endif
