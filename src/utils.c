@@ -36,6 +36,13 @@ as that of the covered work.  */
 #include <string.h>
 #include <time.h>
 #include <unistd.h>
+#ifndef PATH_MAX
+#ifndef _WIN32
+# include <sys/param.h>
+#else
+# include <pathmax.h>
+#endif
+#endif
 #ifdef HAVE_PROCESS_H
 # include <process.h>  /* getpid() */
 #endif

@@ -802,7 +802,7 @@ set_prio_default (gnutls_session_t session)
     case secure_protocol_sslv2:
     case secure_protocol_sslv3:
       allowed_protocols[0] = GNUTLS_SSL3;
-      err = gnutls_protocol_set_priority (session, allowed_protocols);
+      err = gnutls_priority_set_direct (session, allowed_protocols, NULL);
       break;
 
     case secure_protocol_tlsv1:
@@ -812,7 +812,7 @@ set_prio_default (gnutls_session_t session)
 #if GNUTLS_VERSION_NUMBER >= 0x030603
       allowed_protocols[3] = GNUTLS_TLS1_3;
 #endif
-      err = gnutls_protocol_set_priority (session, allowed_protocols);
+      err = gnutls_priority_set_direct (session, allowed_protocols, NULL);
       break;
 
     case secure_protocol_tlsv1_1:
@@ -821,7 +821,7 @@ set_prio_default (gnutls_session_t session)
 #if GNUTLS_VERSION_NUMBER >= 0x030603
       allowed_protocols[2] = GNUTLS_TLS1_3;
 #endif
-      err = gnutls_protocol_set_priority (session, allowed_protocols);
+      err = gnutls_priority_set_direct (session, allowed_protocols, NULL);
       break;
 
     case secure_protocol_tlsv1_2:
@@ -829,13 +829,13 @@ set_prio_default (gnutls_session_t session)
 #if GNUTLS_VERSION_NUMBER >= 0x030603
       allowed_protocols[1] = GNUTLS_TLS1_3;
 #endif
-      err = gnutls_protocol_set_priority (session, allowed_protocols);
+      err = gnutls_priority_set_direct (session, allowed_protocols, NULL);
       break;
 
     case secure_protocol_tlsv1_3:
 #if GNUTLS_VERSION_NUMBER >= 0x030603
       allowed_protocols[0] = GNUTLS_TLS1_3;
-      err = gnutls_protocol_set_priority (session, allowed_protocols);
+      err = gnutls_priority_set_direct (session, allowed_protocols, NULL);
       break;
 #else
       logprintf (LOG_NOTQUIET, _("Your GnuTLS version is too old to support TLS 1.3\n"));
