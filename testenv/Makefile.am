@@ -1,5 +1,5 @@
 # Makefile for `wget' utility
-# Copyright (C) 2013, 2015, 2018-2022 Free Software Foundation, Inc.
+# Copyright (C) 2013, 2015, 2018-2023 Free Software Foundation, Inc.
 
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -44,6 +44,7 @@ DEFAULT_TESTS = \
   Test-condget.py                                 \
   Test-Content-disposition-2.py                   \
   Test-Content-disposition.py                     \
+  test_css_url.py								  \
   Test--convert-links--content-on-error.py        \
   Test-cookie-401.py                              \
   Test-cookie-domain-mismatch.py                  \

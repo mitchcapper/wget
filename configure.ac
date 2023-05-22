@@ -1,5 +1,5 @@
 dnl Template file for GNU Autoconf
-dnl Copyright (C) 1995-1997, 2001, 2007-2014, 2018-2022 Free Software
+dnl Copyright (C) 1995-1997, 2001, 2007-2014, 2018-2023 Free Software
 dnl Foundation, Inc.
 
 dnl This program is free software; you can redistribute it and/or modify
@@ -396,6 +396,8 @@ if test -n "$WARN_CFLAGS"; then
     nw="$nw -Wswitch-default" # TODO: Enable someday. Too noisy for now
     nw="$nw -Wpedantic" # GCC 11. Too noisy, will never be supported
     nw="$nw -Wnested-externs" # Stylistic choice and we do use it in hsts code
+    nw="$nw -Wc90-c99-compat" # gcc-12, we use C99
+    nw="$nw -Wlong-long" # gcc-12, we use C99
     if test "$cross_compiling" = yes; then
       nw="$nw -Wformat"
     fi
